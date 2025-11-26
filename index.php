@@ -1,3 +1,4 @@
+<!-- Beispielkommentar -->
 <?php include 'navigator.php' ?>
 <!DOCTYPE html>
 <html lang="en">
