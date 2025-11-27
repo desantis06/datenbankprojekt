@@ -21,15 +21,17 @@
           <li class="nav-item"><a class="nav-link" href="schiedrichter.php">Schiedrichter</a></li>
           <li class="nav-item"><a class="nav-link" href="spieler.php">Spieler</a></li>
           <li class="nav-item"><a class="nav-link" href="vereine.php">Vereine</a></li>
-          <li class="nav-item dropdown">
+          <li class="nav-item"><a class="nav-link" href="liga.php">Liga</a></li>
+          <!--   <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Liga</a>
           <ul class="dropdown-menu"><?php #get Ligas from DB?>
             <li><a class="dropdown-item" href="#">Link</a></li>
             <li><a class="dropdown-item" href="#">Another link</a></li>
             <li><a class="dropdown-item" href="#">A third link</a></li>
           </ul>
-        </li>
+        </li>-->
         </ul>
+        
 
         
 
