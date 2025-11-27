@@ -1,4 +1,5 @@
 <?php include 'navigator.php' ?>
+<?php include 'database/mssql.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,5 +9,8 @@
     <title>Homepage</title>
 </head>
 <body>
+    <?php
+    
+    ?>
 </body>
 </html>
