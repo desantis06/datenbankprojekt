@@ -15,11 +15,13 @@
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item"><a class="nav-link" href="spiele.php">Spiele</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Mannschaften</a></li>
-          <li class="nav-item"><a class="nav-link" href="#"></a></li>
-        </ul>
-
-        <li class="nav-item dropdown">
+          <li class="nav-item"><a class="nav-link" href="mannschaft.php">Mannschaften</a></li>
+          <li class="nav-item"><a class="nav-link" href="stadion.php">Stadion</a></li>
+          <li class="nav-item"><a class="nav-link" href="trainer.php">Trainer</a></li>
+          <li class="nav-item"><a class="nav-link" href="schiedrichter.php">Schiedrichter</a></li>
+          <li class="nav-item"><a class="nav-link" href="spieler.php">Spieler</a></li>
+          <li class="nav-item"><a class="nav-link" href="vereine.php">Vereine</a></li>
+          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Liga</a>
           <ul class="dropdown-menu"><?php #get Ligas from DB?>
             <li><a class="dropdown-item" href="#">Link</a></li>
@@ -27,6 +29,9 @@
             <li><a class="dropdown-item" href="#">A third link</a></li>
           </ul>
         </li>
+        </ul>
+
+        
 
         <form class="d-flex ms-3">
           <input class="form-control me-2" type="text" placeholder="Search">
