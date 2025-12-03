@@ -1,4 +1,4 @@
-<?php include 'navigator.php' ?>
+<?php include 'navigator.php' // Bruno?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -1,7 +1,7 @@
 <?php 
 $serverName = "(localdb)\MSSQLLocalDB";
 $database = "Projekt";
-
+//aaa
  try{
 
      $pdo = new PDO("sqlsrv:Server=$serverName;Database=$database");

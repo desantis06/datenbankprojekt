@@ -25,7 +25,7 @@ $pdo = null;
         <th>Gründungsjahr</th>
     </tr>
 
-    <?php foreach ($vereine as $row): ?>    <!-- FIXED -->
+    <?php foreach ($vereine as $row): ?>    
     <tr>
         <td><?= htmlspecialchars($row['PK_Verein']) ?></td>
         <td><?= htmlspecialchars($row['Name']) ?></td>

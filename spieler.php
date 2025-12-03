@@ -1,1 +1,1 @@
-<?php include 'navigator.php' ?>
+<?php include 'navigator.php' // Denis ?>
