@@ -12,8 +12,9 @@ try {
     $stmt->bindParam(':vereinName', $_POST["vereinName"]);
     $stmt->bindParam(':jahr', $_POST["gruendungsjahr"]);
 
-    $stmt->execute();
-    //$vereine = $stmt->fetchAll();   
+    $stmt->execute();  
+
+    header('Location: ../vereine.php');
 
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
