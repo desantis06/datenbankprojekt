@@ -5,7 +5,7 @@
 try {
     $stmt = $pdo->prepare(
         "SELECT [PK_Verein], [Name], [Gruendungsjahr]
-         FROM [Projekt].[dbo].[tbl_verein]"
+         FROM tbl_verein"
     );
 
     $stmt->execute();
@@ -29,11 +29,16 @@ $pdo = null;
 
     <?php foreach ($vereine as $row): ?>    
     <tr>
-        <td><?= $row['PK_Verein'] ?></td>
-        <td><input type="text" value="<?= htmlspecialchars($row['Name']) ?>"></td>
-        <td><input type="text" value="<?= htmlspecialchars($row['Gruendungsjahr']) ?>"></td>
-        <td><button type="submit" name="change" value="<?= $row['PK_Verein'] ?>">Ändern</button></td>
+        <form action="./vereine/vereine-change.php" method="post">
+            <td><?= $row['PK_Verein'] ?></td>
+            <td><input type="text" name="vereinName" value="<?= htmlspecialchars($row['Name']) ?>"></td>
+            <td><input type="text" name="jahr" value="<?= htmlspecialchars($row['Gruendungsjahr']) ?>"></td>
+            <!-- <input type="hidden" name="PK_Verein" value="<?= $row['PK_Verein'] ?>"> -->
+            <td><button type="submit" name="PK_Verein" value="<?= $row['PK_Verein'] ?>">Ändern</button></td>
+        </form>
+        
         <td><button type="submit" name="delete" value="<?= $row['PK_Verein'] ?>">Löschen</button></td>
+        
     </tr>
     <?php endforeach; ?>
 
