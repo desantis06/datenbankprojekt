@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -55,10 +56,43 @@ $pdo = null;
     
         <td><button type="submit" name="edit" value ="<?php echo $row['PK_Spiel'] ?>">Edit</button></td>
     </form>
+        <form action="Api/spiele/spiele-delete.php" method="post">
+        <td><button type="submit" name="delete" value ="<?php echo $row['PK_Spiel'] ?>">Delete</button></td>
+        </form>
     </tr>
     <?php endforeach; ?>
 </table>
+<table>
+<form action="Api/spiele/spiele-add.php" method="post">
 
+    <td>    <label for="Ergebnis">Ergebnis</label>
+        <input type="text" id="Ergebnis" name="Ergebnis" value="">
+    </td>
+<td>
+        <label for="Anpfiff">Anpfiff</label>
+        <input type="text" id="Anpfiff" name="Anpfiff" value="">
+    </td>
+<td>
+        <label for="FK_Schiedsrichter">FK_Schiedsrichter</label>
+        <input type="text" id="FK_Schiedsrichter" name="FK_Schiedsrichter" value="">
+    </td>
+<td>
+        <label for="FK_Stadion">FK_Stadion</label>
+        <input type="text" id="FK_Stadion" name="FK_Stadion" value="">
+    </td>
+<td>
+        <label for="FK_Mannschaft_Heim">FK_Mannschaft_Heim</label>
+        <input type="text" id="FK_Mannschaft_Heim" name="FK_Mannschaft_Heim" value="">
+    </td>
+<td>
+        <label for="FK_Mannschaft_Auswaerts">FK_Mannschaft_Auswaerts</label>
+        <input type="text" id="FK_Mannschaft_Auswaerts" name="FK_Mannschaft_Auswaerts" value="">
+    </td>
+    <td>
+    <button type="submit">Spiel hinzufügen</button>
+    </td>
+</form>
+    </table>
 
 </body>
 </html>
