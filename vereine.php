@@ -36,8 +36,9 @@ $pdo = null;
             <!-- <input type="hidden" name="PK_Verein" value="<?= $row['PK_Verein'] ?>"> -->
             <td><button type="submit" name="PK_Verein" value="<?= $row['PK_Verein'] ?>">Ändern</button></td>
         </form>
-        
-        <td><button type="submit" name="delete" value="<?= $row['PK_Verein'] ?>">Löschen</button></td>
+        <form action="./vereine/vereine-delete.php" method="post">
+            <td><button type="submit" name="PK_Verein" value="<?= $row['PK_Verein'] ?>">Löschen</button></td>
+        </form>
         
     </tr>
     <?php endforeach; ?>
