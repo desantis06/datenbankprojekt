@@ -30,12 +30,12 @@ $pdo = null;
     <tr>
                 <form action="./liga/liga-change.php" method="post">
             <td><?= $row['PK_Liga'] ?></td>
-        <td>  <input type="text" value="<?= $row['Name']?>">  </td>
-        <td> <button type="submit" Name="Aendern" value="<?php $row['PK_Liga'] ?>">Ändern </td>
+        <td>  <input type="text" name="Name" value="<?= $row['Name']?>">  </td>
+            <td><button type="submit" name="PK_Liga" value="<?= $row['PK_Liga'] ?>">Ändern</button></td>
         </form>
-                <form action="./liga/liga-delete.php" method="post">
-        <td> <button type="submit" Name="Loeschen" value="<?php $row['PK_Liga'] ?>"> Löschen </td>
-    </form>
+               <form action="./liga/liga-delete.php" method="post">
+            <td><button type="submit" name="PK_Liga" value="<?= $row['PK_Liga'] ?>">Löschen</button></td>
+        </form>
 
     </tr>
     <?php endforeach; ?>
