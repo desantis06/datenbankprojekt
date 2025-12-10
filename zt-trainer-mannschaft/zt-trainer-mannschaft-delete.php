@@ -6,18 +6,14 @@ print_r($_POST);?>
 <?php
 try {
     $stmt = $pdo->prepare("
-        UPDATE tbl_trainer 
-        SET Vorname = :vorname, Nachname = :nachname, Lizenzschein = :lizenz
+        DELETE FROM tbl_trainer
         WHERE PK_Trainer = :pk
     ");
-    $stmt->bindParam(':vorname', $_POST["trainerName"]);
-    $stmt->bindParam(':nachname', $_POST["trainerNachname"]);
-    $stmt->bindParam(':lizenz', $_POST["trainerLizenzschein"]);
     $stmt->bindParam(':pk', $_POST["PK_Trainer"]);
 
     $stmt->execute();  
 
-    header('Location: ../trainer.php');
+    header('Location: ../zt-trainer-mannschaft.php');
 
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();

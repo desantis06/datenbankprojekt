@@ -4,7 +4,7 @@
 <?php
 try {
     $stmt = $pdo->prepare(
-        "SELECT [PK_Trainer], [Vorname], [Nachname], [Lizenzschein]
+        "SELECT PK_Trainer, Vorname, Nachname, Lizenzschein
          FROM tbl_trainer"
     );
 
