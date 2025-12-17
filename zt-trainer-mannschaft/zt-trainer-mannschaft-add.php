@@ -6,13 +6,13 @@ print_r($_POST);?>
 <?php
 try {
     $stmt = $pdo->prepare("
-        INSERT INTO tbl_trainer (Von, Bis, FK_Mannschaft, FK_Trainer)
+        INSERT INTO tbl_trainer_mannschaft (Von, Bis, FK_Mannschaft, FK_Trainer)
         VALUES (:von, :bis, :fk_mann, :fk_trainer)
     ");
     $stmt->bindParam(':von', $_POST["Von"]);
     $stmt->bindParam(':bis', $_POST["Bis"]);
-    $stmt->bindParam(':fk_mann', $_POST["Lizenzschein"]);
-    $stmt->bindParam(':fk_trainer', $_POST["Lizenzschein"]);
+    $stmt->bindParam(':fk_mann', $_POST["FK_Mannschaft"]);
+    $stmt->bindParam(':fk_trainer', $_POST["FK_Trainer"]);
 
     $stmt->execute();  
 
