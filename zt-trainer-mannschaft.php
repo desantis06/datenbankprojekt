@@ -38,14 +38,14 @@ $pdo = null;
             <td><input type="text" name="FK_Trainer" value="<?= htmlspecialchars($daten['FK_Trainer']) ?>"></td>
             <td><button type="submit" name="PK_Trainer_Mannschaft" value="<?= $daten['PK_Trainer_Mannschaft'] ?>">Ändern</button></td>
         </form>
-        <form action="./zt-trainer-mannschaft-delete.php" method="post">
+        <form action="./zt-trainer-mannschaft/zt-trainer-mannschaft-delete.php" method="post">
             <td><button type="submit" name="PK_Trainer_Mannschaft" value="<?= $daten['PK_Trainer_Mannschaft'] ?>">Löschen</button></td>
         </form>
         
     </tr>
     <?php } ?>
 
-    <form action="./zt-trainer-mannschaft-add.php" method="post">
+    <form action="./zt-trainer-mannschaft/zt-trainer-mannschaft-add.php" method="post">
         <td>auto increment</td>
         <td><input type="text" name="Von"></td>
         <td><input type="text" name="Bis"></td>

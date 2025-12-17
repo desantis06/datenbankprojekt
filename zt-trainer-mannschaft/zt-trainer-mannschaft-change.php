@@ -6,14 +6,15 @@ print_r($_POST);?>
 <?php
 try {
     $stmt = $pdo->prepare("
-        UPDATE tbl_trainer 
-        SET Vorname = :vorname, Nachname = :nachname, Lizenzschein = :lizenz
-        WHERE PK_Trainer = :pk
+        UPDATE tbl_trainer_mannschaft 
+        SET Von = :von, Bis = :bis, FK_Mannschaft = :fk_mannschaft, FK_Trainer = :fk_trainer
+        WHERE PK_Trainer_Mannschaft = :pk
     ");
-    $stmt->bindParam(':vorname', $_POST["trainerName"]);
-    $stmt->bindParam(':nachname', $_POST["trainerNachname"]);
-    $stmt->bindParam(':lizenz', $_POST["trainerLizenzschein"]);
-    $stmt->bindParam(':pk', $_POST["PK_Trainer"]);
+    $stmt->bindParam(':von', $_POST["Von"]);
+    $stmt->bindParam(':bis', $_POST["Bis"]);
+    $stmt->bindParam(':fk_mannschaft', $_POST["FK_Mannschaft"]);
+    $stmt->bindParam(':fk_trainer', $_POST["FK_Trainer"]);
+    $stmt->bindParam(':pk', $_POST["PK_Trainer_Mannschaft"]);
 
     $stmt->execute();  
 

@@ -6,10 +6,10 @@ print_r($_POST);?>
 <?php
 try {
     $stmt = $pdo->prepare("
-        DELETE FROM tbl_trainer
-        WHERE PK_Trainer = :pk
+        DELETE FROM tbl_trainer_mannschaft
+        WHERE PK_Trainer_Mannschaft = :pk
     ");
-    $stmt->bindParam(':pk', $_POST["PK_Trainer"]);
+    $stmt->bindParam(':pk', $_POST["PK_Trainer_Mannschaft"]);
 
     $stmt->execute();  
 
