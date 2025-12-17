@@ -5,7 +5,9 @@
 try {
     $stmt = $pdo->prepare(
         "SELECT *
-         FROM tbl_trainer_mannschaft"
+         FROM tbl_trainer_mannschaft
+         JOIN tbl_trainer ON tbl_trainer_mannschaft.FK_Trainer=tbl_trainer.PK_Trainer
+         JOIN tbl_mannschaft ON tbl_trainer_mannschaft.FK_Mannschaft=tbl_mannschaft.PK_Mannschaft"
     );
 
     $stmt->execute();
@@ -24,6 +26,10 @@ $pdo = null;
         <th>Bis</th>
         <th>FK_Mannschaft</th>
         <th>FK_Trainer</th>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Lizenzschein</th>
+        <th>Name-Mannschaft</th>
         <th>Ändern</th>
         <th>Löschen</th>
     </tr>
@@ -36,6 +42,10 @@ $pdo = null;
             <td><input type="text" name="Bis" value="<?= htmlspecialchars($daten['Bis']) ?>"></td>
             <td><input type="text" name="FK_Mannschaft" value="<?= htmlspecialchars($daten['FK_Mannschaft']) ?>"></td>
             <td><input type="text" name="FK_Trainer" value="<?= htmlspecialchars($daten['FK_Trainer']) ?>"></td>
+            <td><input type="text" name="Vorname" value="<?php echo $daten['Vorname'] ?>"></td>
+            <td><input type="text" name="Nachname" value="<?php echo $daten['Nachname'] ?>"></td>
+            <td><input type="text" name="Lizenzschein" value="<?php echo $daten['Lizenzschein'] ?>"></td>
+            <td><input type="text" name="Name-Mannschaft" value="<?php echo $daten['Name'] ?>"></td>
             <td><button type="submit" name="PK_Trainer_Mannschaft" value="<?= $daten['PK_Trainer_Mannschaft'] ?>">Ändern</button></td>
         </form>
         <form action="./zt-trainer-mannschaft/zt-trainer-mannschaft-delete.php" method="post">
