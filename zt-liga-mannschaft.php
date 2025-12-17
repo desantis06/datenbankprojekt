@@ -17,7 +17,6 @@ try {
             ON m.PK_Mannschaft = lm.FK_Mannschaft
         LEFT JOIN tbl_liga l
             ON l.PK_Liga = lm.FK_Liga
-        ORDER BY m.Name
     ");
     $stmt->execute();
     $ligaMannschaft = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -25,7 +24,6 @@ try {
     $stmt = $pdo->prepare("
         SELECT PK_Mannschaft, Name
         FROM tbl_mannschaft
-        ORDER BY Name
     ");
     $stmt->execute();
     $mannschaften = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -33,7 +31,6 @@ try {
     $stmt = $pdo->prepare("
         SELECT PK_Liga, Name
         FROM tbl_liga
-        ORDER BY Name
     ");
     $stmt->execute();
     $ligen = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -45,7 +42,7 @@ try {
 $pdo = null;
 ?>
 
-<table cellpadding="5">
+<table>
     <tr>
         <th>PK_Liga_Mannschaft</th>
         <th>Mannschaft</th>
@@ -103,33 +100,31 @@ $pdo = null;
 
     <form action="./liga-mannschaft/zt-liga-mannschaft-add.php" method="post">
         <tr>
-            <td>auto increment</td>
-
-            <td>
-                <select name="FK_Mannschaft">
-                    <?php foreach ($mannschaften as $m): ?>
-                        <option value="<?= $m['PK_Mannschaft'] ?>">
-                            <?= htmlspecialchars($m['Name']) ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </td>
-
-            <td>
-                <select name="FK_Liga">
-                    <?php foreach ($ligen as $l): ?>
-                        <option value="<?= $l['PK_Liga'] ?>">
-                            <?= htmlspecialchars($l['Name']) ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </td>
+        <td>auto increment</td>
+        <td>
+        <select name="FK_Mannschaft">
+        <?php foreach ($mannschaften as $m): ?>
+        <option value="<?= $m['PK_Mannschaft'] ?>">
+        <?= htmlspecialchars($m['Name']) ?>
+        </option>
+        <?php endforeach; ?>
+        </select>
+        </td>
+        <td>
+        <select name="FK_Liga">
+        <?php foreach ($ligen as $l): ?>
+        <option value="<?= $l['PK_Liga'] ?>">
+        <?= htmlspecialchars($l['Name']) ?>
+        </option>
+        <?php endforeach; ?>
+        </select>
+        </td>
 
 
 
 
 
-            
+
 
 
             <td><input type="date" name="Von"></td>
