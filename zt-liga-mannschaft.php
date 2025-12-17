@@ -21,17 +21,11 @@ try {
     $stmt->execute();
     $ligaMannschaft = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $stmt = $pdo->prepare("
-        SELECT PK_Mannschaft, Name
-        FROM tbl_mannschaft
-    ");
+    $stmt = $pdo->prepare("SELECT PK_Mannschaft, Name FROM tbl_mannschaft");
     $stmt->execute();
     $mannschaften = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $stmt = $pdo->prepare("
-        SELECT PK_Liga, Name
-        FROM tbl_liga
-    ");
+    $stmt = $pdo->prepare("SELECT PK_Liga, Name FROM tbl_liga");
     $stmt->execute();
     $ligen = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -78,7 +72,6 @@ $pdo = null;
                 </select>
             </td>
             
-
             <td><input type="date" name="Von" value="<?= $row['Von'] ?>"></td>
             <td><input type="date" name="Bis" value="<?= $row['Bis'] ?>"></td>
 

@@ -4,14 +4,7 @@
 <?php
 try {
     $stmt = $pdo->prepare("
-        UPDATE tbl_liga_mannschaft
-        SET
-            FK_Liga = :FK_Liga,
-            FK_Mannschaft = :FK_Mannschaft,
-            Von = :Von,
-            Bis = :Bis
-        WHERE PK_Liga_Mannschaft = :pk
-    ");
+        UPDATE tbl_liga_mannschaft SET FK_Liga = :FK_Liga, FK_Mannschaft = :FK_Mannschaft, Von = :Von, Bis = :Bis WHERE PK_Liga_Mannschaft = :pk");
 
     $stmt->bindParam(':FK_Liga', $_POST['FK_Liga']);
     $stmt->bindParam(':FK_Mannschaft', $_POST['FK_Mannschaft']);
@@ -23,7 +16,7 @@ try {
 
     header('Location: ../zt-liga-mannschaft.php');
 
-    
+
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
