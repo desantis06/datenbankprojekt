@@ -18,7 +18,7 @@
           <li class="nav-item"><a class="nav-link" href="mannschaft.php">Mannschaften</a></li>
           <li class="nav-item"><a class="nav-link" href="stadion.php">Stadion</a></li>
           <li class="nav-item"><a class="nav-link" href="trainer.php">Trainer</a></li>
-          <li class="nav-item"><a class="nav-link" href="schiedrichter.php">Schiedrichter</a></li>
+          <li class="nav-item"><a class="nav-link" href="schiedsrichter.php">Schiedrichter</a></li>
           <li class="nav-item"><a class="nav-link" href="spieler.php">Spieler</a></li>
           <li class="nav-item"><a class="nav-link" href="vereine.php">Vereine</a></li>
           <li class="nav-item"><a class="nav-link" href="liga.php">Liga</a></li>
