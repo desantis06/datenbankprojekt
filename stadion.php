@@ -10,8 +10,7 @@ try {
 
     $stmt->execute();
     $stadion = $stmt->fetchAll();   
-               
-} catch(PDOException $e) {
+            } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
 

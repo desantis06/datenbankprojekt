@@ -19,6 +19,7 @@ try {
     
     $stmt->execute();  
 
+    
    header('Location: ../stadion.php');
 
 } catch(PDOException $e) {
