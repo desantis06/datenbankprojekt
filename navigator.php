@@ -22,6 +22,9 @@
           <li class="nav-item"><a class="nav-link" href="spieler.php">Spieler</a></li>
           <li class="nav-item"><a class="nav-link" href="vereine.php">Vereine</a></li>
           <li class="nav-item"><a class="nav-link" href="liga.php">Liga</a></li>
+          <li class="nav-item"><a class="nav-link" href="zt-liga-mannschaft.php">liga-mannschaft</a></li>
+          <li class="nav-item"><a class="nav-link" href="zt-mannschaft-spieler.php">mannschaft-spieler</a></li>
+          <li class="nav-item"><a class="nav-link" href="zt-trainer-mannschaft.php">trainer-mannschaft</a></li>
           <!--   <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Liga</a>
           <ul class="dropdown-menu"><?php #get Ligas from DB?>
