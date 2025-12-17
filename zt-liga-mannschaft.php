@@ -77,6 +77,7 @@ $pdo = null;
                     <?php endforeach; ?>
                 </select>
             </td>
+            
 
             <td><input type="date" name="Von" value="<?= $row['Von'] ?>"></td>
             <td><input type="date" name="Bis" value="<?= $row['Bis'] ?>"></td>

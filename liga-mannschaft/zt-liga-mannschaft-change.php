@@ -23,6 +23,7 @@ try {
 
     header('Location: ../zt-liga-mannschaft.php');
 
+    
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
