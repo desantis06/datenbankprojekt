@@ -16,6 +16,9 @@ try {
     echo "Error: " . $e->getMessage();
 }
 
+
+
+
 $pdo = null;
 ?>
 

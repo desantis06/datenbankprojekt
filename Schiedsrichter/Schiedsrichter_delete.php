@@ -11,6 +11,8 @@ try {
     ");
     $stmt->bindParam(':pk', $_POST["PK_Schiedsrichter"]);
 
+
+    
     $stmt->execute();  
 
     header('Location: ../Schiedsrichter.php');

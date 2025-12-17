@@ -14,6 +14,8 @@ try {
     $stmt->bindParam(':schein', $_POST["schein"]);
    
 
+
+    
     $stmt->execute();  
 
     header('Location: ../Schiedsrichter.php');
