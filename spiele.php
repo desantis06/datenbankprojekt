@@ -68,7 +68,7 @@ $pdo = null;
     <td>            <input type="text" id="Ergebnis" name="Ergebnis" value="">
     </td>
 <td>
-        <input type="text" id="Anpfiff" name="Anpfiff" value="">
+        <input type="date" id="Anpfiff" name="Anpfiff" value="">
     </td>
 <td>
         <input type="text" id="FK_Schiedsrichter" name="FK_Schiedsrichter" value="">
