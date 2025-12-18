@@ -34,10 +34,9 @@ $pdo = null;
     <tr>
         <form action="./Schiedsrichter/Schiedsrichter_update.php" method="post">
             <td><?= $row['PK_Schiedsrichter'] ?></td>
-            <td><input type="text" name="vname" value="<?= $row['Vorname'] ?>"></td>
-            <td><input type="text" name="nname" value="<?= $row['Nachname'] ?>"></td>
-            <td><input type="text" name="schein" value="<?= $row['Lizenzschein'] ?>"></td>
-            <!-- <input type="hidden" name="PK_Verein" value="<?= $row['PK_Schiedsrichter'] ?>"> -->
+            <td><input type="text" name="Vorname" value="<?= $row['Vorname'] ?>"></td>
+            <td><input type="text" name="Nachname" value="<?= $row['Nachname'] ?>"></td>
+            <td><input type="text" name="Lizenzschein" value="<?= $row['Lizenzschein'] ?>"></td>
             <td><button type="submit" name="PK_Schiedsrichter" value="<?= $row['PK_Schiedsrichter'] ?>">Ändern</button></td>
         </form>
         <form action="./Schiedsrichter/Schiedsrichter_delete.php" method="post">

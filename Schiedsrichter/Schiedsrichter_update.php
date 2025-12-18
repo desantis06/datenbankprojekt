@@ -6,17 +6,17 @@ print_r($_POST);?>
 <?php
 try {
     $stmt = $pdo->prepare("
-        UPDATE tbl_spieler
-        SET Vorname = :vname, Nachname = :nname ,Lizensenschein = :schein, 
-        WHERE PK_Schiedsrichter = :pk
+        UPDATE tbl_Schiedsrichter
+        SET Vorname = :Vorname, Nachname = :Nachname ,Lizenzschein = :Lizenzschein
+        WHERE PK_Schiedsrichter = :PK_Schiedsrichter;
     ");
-    $stmt->bindParam(':vname', $_POST["vname"]);
-    $stmt->bindParam(':nname', $_POST["nname"]);
-    $stmt->bindParam(':schein', $_POST["schein"]);
-    $stmt->bindParam(':pk', $_POST["PK_Schiedsrichter"]);
+    $stmt->bindParam(':Vorname', $_POST['Vorname']);
+    $stmt->bindParam(':Nachname', $_POST['Nachname']);
+    $stmt->bindParam(':Lizenzschein', $_POST['Lizenzschein']);
+    $stmt->bindParam(':PK_Schiedsrichter', $_POST['PK_Schiedsrichter']);
 
 
-    
+
     $stmt->execute();  
 
     header('Location: ../Schiedsrichter.php');

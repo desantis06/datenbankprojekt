@@ -6,8 +6,8 @@ print_r($_POST);?>
 <?php
 try {
     $stmt = $pdo->prepare("
-        INSERT INTO tbl_Schiedsrichter ([Vorname], [Nachname],[Lizensenschein])
-        VALUES (:vname, :nname,:nummer,:posi)
+        INSERT INTO tbl_Schiedsrichter ([Vorname], [Nachname],[Lizenzschein])
+        VALUES (:vname, :nname,:schein)
     ");
     $stmt->bindParam(':vname', $_POST["vname"]);
     $stmt->bindParam(':nname', $_POST["nname"]);
@@ -15,7 +15,7 @@ try {
    
 
 
-    
+
     $stmt->execute();  
 
     header('Location: ../Schiedsrichter.php');
