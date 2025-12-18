@@ -61,31 +61,25 @@ $pdo = null;
         </form>
     </tr>
     <?php endforeach; ?>
-</table>
-<table>
-<form action="Api/spiele/spiele-add.php" method="post">
 
-    <td>    <label for="Ergebnis">Ergebnis</label>
-        <input type="text" id="Ergebnis" name="Ergebnis" value="">
+
+<form action="Api/spiele/spiele-add.php" method="post">
+<td>auto increment</td>
+    <td>            <input type="text" id="Ergebnis" name="Ergebnis" value="">
     </td>
 <td>
-        <label for="Anpfiff">Anpfiff</label>
         <input type="text" id="Anpfiff" name="Anpfiff" value="">
     </td>
 <td>
-        <label for="FK_Schiedsrichter">FK_Schiedsrichter</label>
         <input type="text" id="FK_Schiedsrichter" name="FK_Schiedsrichter" value="">
     </td>
 <td>
-        <label for="FK_Stadion">FK_Stadion</label>
         <input type="text" id="FK_Stadion" name="FK_Stadion" value="">
     </td>
 <td>
-        <label for="FK_Mannschaft_Heim">FK_Mannschaft_Heim</label>
         <input type="text" id="FK_Mannschaft_Heim" name="FK_Mannschaft_Heim" value="">
     </td>
 <td>
-        <label for="FK_Mannschaft_Auswaerts">FK_Mannschaft_Auswaerts</label>
         <input type="text" id="FK_Mannschaft_Auswaerts" name="FK_Mannschaft_Auswaerts" value="">
     </td>
     <td>
