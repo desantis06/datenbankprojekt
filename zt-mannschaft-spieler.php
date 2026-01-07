@@ -62,7 +62,7 @@ $pdo = null;
             <button type="submit"
                     name="edit"
                     value="<?= htmlspecialchars($row['PK_Spieler_Mannschaft']) ?>">
-                Edit
+                Ändern
             </button>
         </td>
     </form>
@@ -73,7 +73,7 @@ $pdo = null;
             <button type="submit"
                     name="delete"
                     value="<?= htmlspecialchars($row['PK_Spieler_Mannschaft']) ?>">
-                Delete
+                Löschen
             </button>
         </td>
     </form>

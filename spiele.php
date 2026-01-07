@@ -56,10 +56,10 @@ $pdo = null;
         <td> <input type="text" name="FK_Mannschaft_Heim" value="<?= $row['FK_Mannschaft_Heim'] ?>"></td>
         <td> <input type="text" name="FK_Mannschaft_Auswaerts" value="<?= $row['FK_Mannschaft_Auswaerts'] ?>"></td>
     
-        <td><button type="submit" name="edit" value ="<?php echo $row['PK_Spiel'] ?>">Edit</button></td>
+        <td><button type="submit" name="edit" value ="<?php echo $row['PK_Spiel'] ?>">Ändern</button></td>
     </form>
         <form action="Api/spiele/spiele-delete.php" method="post">
-        <td><button type="submit" name="delete" value ="<?php echo $row['PK_Spiel'] ?>">Delete</button></td>
+        <td><button type="submit" name="delete" value ="<?php echo $row['PK_Spiel'] ?>">Löschen</button></td>
         </form>
     </tr>
     <?php endforeach; ?>
