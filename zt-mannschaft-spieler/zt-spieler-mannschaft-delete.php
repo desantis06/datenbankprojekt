@@ -6,14 +6,14 @@ print_r($_POST);?>
 <?php
 try {
     $stmt = $pdo->prepare("
-        DELETE FROM tbl_trainer_mannschaft
-        WHERE PK_Trainer_Mannschaft = :pk
+        DELETE FROM tbl_spieler_mannschaft
+        WHERE PK_Spieler_Mannschaft = :delete
     ");
-    $stmt->bindParam(':pk', $_POST["PK_Trainer_Mannschaft"]);
+    $stmt->bindParam(':delete', $_POST["delete"]);
 
     $stmt->execute();  
 
-    header('Location: ../zt-trainer-mannschaft.php');
+    header('Location: ../zt-mannschaft-spieler.php');
 
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();

@@ -30,36 +30,33 @@ $pdo = null;
     </tr>
 <tr><?php foreach ($data as $row): ?>
 <tr>
-    <form action="" method="post">
+    <form action="./zt-mannschaft-spieler\zt-spieler-mannschaft-change.php" method="post">
         <td><?= htmlspecialchars($row['PK_Spieler_Mannschaft']) ?></td>
 
         <td>
-            <input type="text" name="Ergebnis"
+            <input type="text" name="Von"
                    value="<?= htmlspecialchars($row['Von']) ?>">
         </td>
 
         <td>
-            <input type="text" name="Anpfiff"
+            <input type="text" name="Bis"
                    value="<?= htmlspecialchars($row['Bis']) ?>">
         </td>
 
-        <td>
-            <input type="text" name="FK_Schiedsrichter"
-                   value="<?= htmlspecialchars($row['FK_Spieler']) ?>">
-        </td>
-
-        <td>
-            <input type="text" name="FK_Stadion"
-                   value="<?= htmlspecialchars($row['FK_Mannschaft']) ?>">
-        </td>
-
-        <td>
+         <td>
             <select name="FK_Spieler">
                 <option value="<?= htmlspecialchars($row['FK_Spieler']) ?>">
-                    <?= htmlspecialchars($row['tbl_spieler.Vorname']) ?>
+                    <?= htmlspecialchars($row['Vorname']) ?>
                 </option>
             </select>
         </td>
+
+        <td>
+            <input type="text" name="FK_Mannschaft"
+                   value="<?= htmlspecialchars($row['FK_Mannschaft']) ?>">
+        </td>
+
+      
 
         <td>
             <button type="submit"
@@ -71,7 +68,7 @@ $pdo = null;
     </form>
 
     
-    <form action="Api/spiele/spiele-delete.php" method="post">
+    <form action="./zt-mannschaft-spieler\zt-spieler-mannschaft-delete.php" method="post">
         <td>
             <button type="submit"
                     name="delete"
@@ -86,5 +83,37 @@ $pdo = null;
 
     </tr>
 </tr>
+<tr>
+        <form action="./zt-trainer-mannschaft/zt-trainer-mannschaft-add.php" method="post">
+            <td>auto</td>
+
+            <td><input type="text" name="Von"></td>
+            <td><input type="text" name="Bis"></td>
+
+            <td>
+                <select name="FK_Trainer">
+                    <?php foreach ($trainerListe as $trainer) { ?>
+                        <option value="<?= $trainer['PK_Spieler_Mannschaft'] ?>">
+                            <?= htmlspecialchars($trainer['Nachname']) ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </td>
+
+            <td>
+                <select name="FK_Mannschaft">
+                    <?php foreach ($mannschaftListe as $mannschaft) { ?>
+                        <option value="<?= $mannschaft['PK_Mannschaft'] ?>">
+                            <?= htmlspecialchars($mannschaft['Name']) ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </td>
+
+            <td colspan="2">
+                <button type="submit" name="add">Hinzufügen</button>
+            </td>
+        </form>
+    </tr>
    
 </table>
