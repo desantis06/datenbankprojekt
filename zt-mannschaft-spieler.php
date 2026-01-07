@@ -10,6 +10,12 @@ try {
          JOIN tbl_mannschaft ON tbl_spieler_mannschaft.FK_Mannschaft=tbl_mannschaft.PK_Mannschaft"
         );
     $stmt->execute();
+       $stmtSpieler = $pdo->prepare("
+        SELECT PK_Spieler, Vorname
+        FROM tbl_spieler
+    ");
+    $stmtSpieler->execute();
+    $spielerListe = $stmtSpieler->fetchAll();
     $data = $stmt->fetchAll();
     
 } catch(PDOException $e) {
@@ -44,11 +50,16 @@ $pdo = null;
         </td>
 
          <td>
-            <select name="FK_Spieler">
-                <option value="<?= htmlspecialchars($row['FK_Spieler']) ?>">
-                    <?= htmlspecialchars($row['Vorname']) ?>
-                </option>
-            </select>
+
+              <select name="FK_Spieler">
+                    <?php foreach ($spielerListe as $spieler) : ?>
+                        <option value="<?= $row['PK_Spieler'] ?>"
+                            <?= ($spieler['PK_Spieler'] == $row['FK_Spieler']) ? 'selected' : '' ?>>
+                            <?= htmlspecialchars($spieler['Vorname']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            
         </td>
 
         <td>
