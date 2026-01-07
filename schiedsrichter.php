@@ -28,6 +28,8 @@ $pdo = null;
         <th>Vorname</th>
         <th>Nachname</th>
         <th>Lizenzschein</th>
+        <th>Ändern</th>
+        <th>Löschen</th>
     </tr>
 
     <?php foreach ($schiedsrichter as $row): ?>    

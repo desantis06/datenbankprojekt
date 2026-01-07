@@ -41,6 +41,8 @@ $pdo = null;
         <th>FK_Stadion</th>
         <th>FK_Mannschaft_Heim</th>
         <th>FK_Mannschaft_Auswaerts</th>
+        <th>Ändern</th>
+        <th>Löschen</th>
     </tr>
 
     <?php foreach ($vereine as $row): ?>    

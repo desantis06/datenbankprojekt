@@ -27,6 +27,8 @@ $pdo = null;
         <th>PK_Mannschaft</th>
         <th>Name</th>
         <th>FK_Verein</th>
+        <th>Ändern</th>
+        <th>Löschen</th>
      
     </tr>
 
