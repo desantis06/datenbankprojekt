@@ -85,7 +85,7 @@ $pdo = null;
         <input type="text" id="FK_Mannschaft_Auswaerts" name="FK_Mannschaft_Auswaerts" value="">
     </td>
     <td>
-    <button type="submit">Spiel hinzufügen</button>
+    <button type="submit">Hinzufügen</button>
     </td>
 </form>
     </table>

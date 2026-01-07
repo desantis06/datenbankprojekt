@@ -41,7 +41,7 @@ $pdo = null;
     <?php endforeach; ?>
 
     <form action="./liga/liga-add.php" method="post">
-    <td> Automatisch  </td>
+    <td> auto increment  </td>
     <td> <input type="text" name="NeuName" id="">     </td>
     <td> <button type="submit" Name="Loeschen" value=""> Neu Anlegen </button></td>
     </form>

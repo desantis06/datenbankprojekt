@@ -85,7 +85,7 @@ $pdo = null;
 </tr>
 <tr>
         <form action="./zt-trainer-mannschaft/zt-trainer-mannschaft-add.php" method="post">
-            <td>auto</td>
+            <td>auto increment</td>
 
             <td><input type="text" name="Von"></td>
             <td><input type="text" name="Bis"></td>
