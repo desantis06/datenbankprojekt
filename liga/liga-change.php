@@ -16,7 +16,7 @@ try {
 
     $stmt->execute();  
 
-   // header('Location: ../Liga.php');
+    header('Location: ../Liga.php');
 
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();

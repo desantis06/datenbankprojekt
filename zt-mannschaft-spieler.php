@@ -11,13 +11,18 @@ try {
         );
     $stmt->execute();
        $stmtSpieler = $pdo->prepare("
-        SELECT PK_Spieler, Vorname
+        SELECT PK_Spieler, Vorname,Nachname
         FROM tbl_spieler
     ");
     $stmtSpieler->execute();
     $spielerListe = $stmtSpieler->fetchAll();
     $data = $stmt->fetchAll();
-    
+    $stmtMannschaft = $pdo->prepare("
+        SELECT PK_Mannschaft, Name
+        FROM tbl_mannschaft
+    ");
+    $stmtMannschaft->execute();
+    $mannschaftListe = $stmtMannschaft->fetchAll(PDO::FETCH_ASSOC);
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
@@ -53,9 +58,9 @@ $pdo = null;
 
               <select name="FK_Spieler">
                     <?php foreach ($spielerListe as $spieler) : ?>
-                        <option value="<?= $row['PK_Spieler'] ?>"
-                            <?= ($spieler['PK_Spieler'] == $row['FK_Spieler']) ? 'selected' : '' ?>>
-                            <?= htmlspecialchars($spieler['Vorname']) ?>
+                        <option value="<?= $spieler['PK_Spieler'] ?>"
+                            <?= ($spieler['PK_Spieler'] == $row['PK_Spieler']) ? 'selected' : '' ?>>
+                            <?= htmlspecialchars($spieler['Nachname']) ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
@@ -63,8 +68,14 @@ $pdo = null;
         </td>
 
         <td>
-            <input type="text" name="FK_Mannschaft"
-                   value="<?= htmlspecialchars($row['FK_Mannschaft']) ?>">
+             <select name="FK_Mannschaft">
+                    <?php foreach ($mannschaftListe as $mannschaft) : ?>
+                        <option value="<?= $mannschaft['PK_Mannschaft'] ?>"
+                            <?= ($mannschaft['PK_Mannschaft'] == $row['PK_Mannschaft']) ? 'selected' : '' ?>>
+                            <?= htmlspecialchars($mannschaft['Name']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
         </td>
 
       
@@ -95,17 +106,17 @@ $pdo = null;
     </tr>
 </tr>
 <tr>
-        <form action="./zt-trainer-mannschaft/zt-trainer-mannschaft-add.php" method="post">
+        <form action="./zt-mannschaft-spieler/zt-spieler-mannschaft-add.php" method="post">
             <td>auto increment</td>
 
             <td><input type="text" name="Von"></td>
             <td><input type="text" name="Bis"></td>
 
             <td>
-                <select name="FK_Trainer">
-                    <?php foreach ($trainerListe as $trainer) { ?>
-                        <option value="<?= $trainer['PK_Spieler_Mannschaft'] ?>">
-                            <?= htmlspecialchars($trainer['Nachname']) ?>
+                <select name="FK_Spieler">
+                    <?php foreach ($spielerListe as $spieler) { ?>
+                        <option value="<?= $spieler['PK_Spieler'] ?>">
+                            <?= htmlspecialchars($spieler['Nachname']) ?>
                         </option>
                     <?php } ?>
                 </select>
