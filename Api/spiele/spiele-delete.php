@@ -1,6 +1,5 @@
 <?php 
 include '../../database/mssql.php'; 
-print_r($_POST);
 
 $sql = "DELETE FROM  [dbo].[tbl_spiel]
         WHERE PK_Spiel = :PK_Spiel";

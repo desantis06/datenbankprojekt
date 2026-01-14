@@ -1,7 +1,6 @@
 <?php include '../navigator.php'; ?>
-<?php include '../database/mssql.php'; 
+<?php include '../database/mssql.php'; ?>
 
-print_r($_POST);?>
 
 <?php
 try {

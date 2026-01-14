@@ -2,7 +2,6 @@
 <?php include '../database/mssql.php'; 
 
 
-print_r($_POST);
 
 
 try {
